@@ -1,5 +1,10 @@
 import React from "react";
 
-const Cell = ({ type }) => <div>{type}</div>;
+import { StyledCell } from "./styles/StyledCell";
+import { TETROMINOS } from "../tetrominos";
+
+const Cell = ({ type }) => (
+    <StyledCell type={"L"} color={TETROMINOS["L"].color} />
+);
 
 export default Cell;
