@@ -6,7 +6,7 @@ import { STAGE_WIDTH } from "../gameHelpers";
 export const usePlayer = () => {
     const [player, setPlayer] = useState({
         pos: { x: 0, y: 0 },
-        tetromimo: randomTetromino().shape,
+        tetromino: randomTetromino().shape,
         collided: false,
     });
 
@@ -14,7 +14,7 @@ export const usePlayer = () => {
     const resetPlayer = useCallback(() => {
         setPlayer({
             pos: { x: STAGE_WIDTH / 2 - 2, y: 0 }, // reset the pos to top middle
-            tetromimo: randomTetromino().shape,
+            tetromino: randomTetromino().shape,
             collided: false,
         });
     }, []);
