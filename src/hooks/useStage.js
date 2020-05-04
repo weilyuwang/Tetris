@@ -22,8 +22,7 @@ export const useStage = (player, resetPlayer) => {
                     }
                 });
             });
-
-            // then check if we collided
+            // Then check if we collided
             if (player.collided) {
                 resetPlayer();
             }
@@ -31,7 +30,7 @@ export const useStage = (player, resetPlayer) => {
             return newStage;
         };
 
-        setStage((prevStage) => updateStage(prevStage));
+        setStage((prev) => updateStage(prev));
     }, [player, resetPlayer]);
 
     return [stage, setStage];
