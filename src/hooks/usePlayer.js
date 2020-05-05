@@ -10,6 +10,29 @@ export const usePlayer = () => {
         collided: false,
     });
 
+    const rotate = (tetromino, dir) => {
+        // Make the rows to become columns (transpose)
+        const rotatedTetromino = tetromino[0].map((_, colIndex) =>
+            tetromino.map((row) => row[colIndex])
+        );
+        // Reverse each row to get a rotated tetromino
+        if (dir > 0) {
+            // clockwise rotation
+            return rotatedTetromino.map((row) => row.reverse());
+        } else {
+            // anti-clockwise rotation
+            return rotatedTetromino.reverse();
+        }
+    };
+
+    const playerRotate = (stage, dir) => {
+        // deep clone of player object
+        const clonedPlayer = JSON.parse(JSON.stringify(player));
+        clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
+
+        setPlayer(clonedPlayer);
+    };
+
     const updatePlayerPos = ({ x, y, collided }) => {
         setPlayer((prev) => ({
             ...prev,
@@ -26,5 +49,5 @@ export const usePlayer = () => {
         });
     }, []);
 
-    return [player, updatePlayerPos, resetPlayer];
+    return [player, updatePlayerPos, resetPlayer, playerRotate];
 };
