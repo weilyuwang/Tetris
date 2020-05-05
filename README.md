@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 A Tetris Game built with React Hooks and Styled Components
 
-![](git/game.gif)
+![Game Demo](gif/game.gif)
 
 ### Deployed using `now.sh`
 
