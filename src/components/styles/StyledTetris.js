@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledTetris = styled.div`
     display: flex;
     align-items: flex-start;
-    padding: 40px;
+    padding: 80px;
     margin: 0 auto;
     max-width: 900px;
 
